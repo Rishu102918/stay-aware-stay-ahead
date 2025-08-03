@@ -1,0 +1,56 @@
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #111;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: #00ffe1;
+}
+
+.domain {
+  margin-bottom: 25px;
+  padding: 20px;
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  border-left: 6px solid #00ffe1;
+}
+
+.domain h2 {
+  color: #00ffe1;
+  margin-bottom: 10px;
+}
+
+.domain ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.domain ul li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.domain ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.domain ul li a:hover {
+  color: #00ffe1;
+  text-decoration: underline;
+}
