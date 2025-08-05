@@ -1,6 +1,6 @@
 body {
-  background-color: #000;
-  color: #fff;
+  background-color: white;
+  color: black;
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
   padding: 0;
@@ -10,7 +10,6 @@ body {
   max-width: 900px;
   margin: 40px auto;
   padding: 20px;
-  background-color: #111;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
 }
@@ -25,13 +24,13 @@ h1 {
 .domain {
   margin-bottom: 25px;
   padding: 20px;
-  background-color: #1c1c1c;
+  background-color:#3790cbc1;
   border-radius: 8px;
-  border-left: 6px solid #00ffe1;
+  border-left: 6px solid none;
 }
 
 .domain h2 {
-  color: #00ffe1;
+  color: black;
   margin-bottom: 10px;
 }
 
@@ -46,11 +45,10 @@ h1 {
 }
 
 .domain ul li a {
-  color: #fff;
+  color: black;
   text-decoration: none;
 }
 
-.domain ul li a:hover {
-  color: #00ffe1;
+.domain ul li a:hover { 
   text-decoration: underline;
 }
