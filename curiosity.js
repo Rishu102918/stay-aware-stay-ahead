@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     Science: {
       articles: [
-        { title: "CRISPR and Gene Editing", link: "https://www.nature.com/articles/d41586-020-00551-4" },
+        { title: "CRISPR and Gene Editing", link: "https://www.nature.com/articles/s41551-025-01463-z" },
         { title: "James Webb Telescope Discoveries", link: "https://webbtelescope.org/news" },
       ],
       books: [
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     "Social & Commercial": {
       articles: [
-        { title: "The Attention Economy", link: "https://hbr.org/2020/05/the-attention-economy" },
+        { title: "The Attention Economy", link: "https://hbr.org/" },
         { title: "Crypto and the New Economy", link: "https://www.coindesk.com/" },
       ],
       books: [
@@ -32,8 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     Random: {
       articles: [
-        { title: "The Mandela Effect", link: "https://www.verywellmind.com/what-is-the-mandela-effect-5196226" },
-        { title: "Strange Phenomena in Nature", link: "https://www.livescience.com/strange-nature" },
+        { title: "The Mandela Effect", link: "https://www.verywellmind.com/what-is-the-mandela-effect-4589394" },
+        { title: "Strange Phenomena in Nature", link: "https://www.livescience.com/space/bizarre-phenomena-that-lit-up-the-sky-and-their-scientific-explanations" },
       ],
       books: [
         { title: "The Book of General Ignorance", link: "https://www.goodreads.com/book/show/17718.The_Book_of_General_Ignorance" },
