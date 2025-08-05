@@ -1,15 +1,15 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: black;
-  color: #fff;
+  background-color: white;
+  color: white;
 }
 
 .container {
   max-width: 800px;
   margin: 50px auto;
   padding: 20px;
-  background-color: black;
+  background-color: #3790cbc1;
   border-radius: 12px;
   box-shadow: none;
 }
