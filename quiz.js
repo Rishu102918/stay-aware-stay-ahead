@@ -73,11 +73,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function showQuestion() {
     const q = currentQuestions[quizIndex];
+    let optionsHTML = "";
+    q.a.forEach((opt, i) => {
+      optionsHTML += `<button class="option-btn" data-index="${i}">${opt}</button>`;
+    });
+
     quizSection.innerHTML = `
-      <p>${q.q}</p>
-      <div id="options">
-        ${q.a.map((opt, i) => `<button class="option-btn" data-index="${i}">${opt}</button>`).join("")}
-      </div>
+      <div class="question-box">${q.q}</div>
+      <div class="options">${optionsHTML}</div>
       <p>Time: <span id="timer">${timeLeft}</span> sec</p>
       <p id="result"></p>
     `;
