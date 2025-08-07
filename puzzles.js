@@ -22,29 +22,66 @@ function createPuzzleBoard() {
     board.appendChild(tile);
   });
 }
-
 function shuffleTiles() {
+  let tiles = [...Array(8).keys()].map(x => x + 1);
+  tiles.push(""); // empty tile
+
+  do {
+    // Fisher-Yates Shuffle
+    for (let i = tiles.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+    }
+  } while (!isSolvable(tiles));
+
   const board = document.getElementById("puzzle-board");
-  let tiles = Array.from(board.children);
-  for (let i = tiles.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    board.appendChild(tiles[j]);
-    [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
-  }
+  board.innerHTML = "";
+
+  tiles.forEach((val, i) => {
+    const tile = document.createElement("div");
+    tile.className = "tile" + (val === "" ? " empty" : "");
+    tile.textContent = val;
+    tile.addEventListener("click", () => moveTile(i));
+    board.appendChild(tile);
+  });
 }
 
 function moveTile(index) {
   const board = document.getElementById("puzzle-board");
   const tiles = Array.from(board.children);
   const emptyIndex = tiles.findIndex(tile => tile.classList.contains("empty"));
-  const allowedMoves = [index - 1, index + 1, index - 3, index + 3];
-  if (allowedMoves.includes(emptyIndex)) {
+
+  const sameRow = Math.floor(index / 3) === Math.floor(emptyIndex / 3);
+  const isAdjacent =
+    (index === emptyIndex - 1 && sameRow) || // left
+    (index === emptyIndex + 1 && sameRow) || // right
+    index === emptyIndex - 3 || // up
+    index === emptyIndex + 3;   // down
+
+  if (isAdjacent) {
+    // Swap text
     [tiles[index].textContent, tiles[emptyIndex].textContent] =
       [tiles[emptyIndex].textContent, tiles[index].textContent];
+    
+    // Swap classes
     tiles[index].classList.toggle("empty");
     tiles[emptyIndex].classList.toggle("empty");
   }
 }
+function isSolvable(tiles) {
+  const arr = tiles.filter(val => val !== ""); // remove blank
+  let inversions = 0;
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] > arr[j]) inversions++;
+    }
+  }
+
+  return inversions % 2 === 0;
+}
+
+
 const riddles = [
   {
     question: "What has to be broken before you can use it?",
